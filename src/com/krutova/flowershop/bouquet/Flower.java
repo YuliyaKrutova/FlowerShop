@@ -7,7 +7,7 @@ public enum Flower {
 	SUNFLOWER(5, "Подсолнух"),
 	GERBERA(2, "Гербера"),
 	CHRYSANTHEMUM(0.9, "Хризантема"),
-	DAISY(1.3, "Daisy"),
+	DAISY(1.3, "Маргаритка"),
 	POPPY(0.7, "Мак");
 	
 	private double price;
