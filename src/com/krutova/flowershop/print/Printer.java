@@ -1,6 +1,6 @@
 package com.krutova.flowershop.print;
 
-import java.util.Map;
+import java.util.Map.Entry;
 
 import com.krutova.flowershop.bouquet.Bouquet;
 import com.krutova.flowershop.bouquet.Flower;
@@ -34,12 +34,10 @@ public class Printer {
 			String printStr = "Упаковка("+b.getBouquetType().getDescription()+")";
 			len = 18-printStr.length();
 			System.out.printf(printStr+"%"+len+"s %1s %12.2f\u20ac\n","","1",b.getBouquetType().getPrice());
-			for (Map.Entry fl : b.getFlower().entrySet()) {
+			for (Entry<Flower, Integer> fl : b.getFlower().entrySet()) {
 				Flower flowerDesc = (Flower)fl.getKey();
 				len = 18-flowerDesc.getDescription().length();
-				System.out.printf(flowerDesc.getDescription()+"%"+len+"s %d %12.2f\u20ac","",fl.getValue(),flowerDesc.getPrice());
-				System.out.println();
-
+				System.out.printf(flowerDesc.getDescription()+"%"+len+"s %d %12.2f\u20ac\n","",fl.getValue(),flowerDesc.getPrice());
 				fullPrice = fullPrice+(flowerDesc.getPrice() * Double.parseDouble(Integer.toString((int)fl.getValue())));
 			}
 			System.out.println("----------------------------------");

@@ -1,8 +1,8 @@
 package com.krutova.flowershop.bouquet;
 
 public enum Packaging {
-	BASE(2, "Base"),
-	BASKET(7, "Basket");
+	BASE(2, "Обычная"),
+	BASKET(7, "Корзина");
 	
 	private double price;
 	private String description;
