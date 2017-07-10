@@ -7,18 +7,18 @@ import com.krutova.flowershop.bouquet.Flower;
 public class Printer {
 
 	public static void printBouquetInfo(Bouquet bouquet) {
-		System.out.println("Букет ["+bouquet.getOrderID()+": "+bouquet.getClientID()+": "+bouquet.getBouquetName()+": "+ bouquet.getBouquetCount() + "]");
+		System.out.println(bouquet.toString());
 	}
 	
 	public static void printOrderReport(Bouquet... bouquet){
 		for (Bouquet b:bouquet){
-			System.out.println("Клиент с номером "+b.getClientID()+" хочет заказать "+b.getBouquetCount()+"шт. "+b.getBouquetType().getDescription()+" с названием '"+b.getBouquetName()+"'." );
+			System.out.printf("Клиент с номером %s хочет заказать %sшт. типа %s с названием '%s'.\n",b.getClientID(),b.getBouquetCount(),b.getBouquetType().getDescription(),b.getBouquetName());
 		}
 	}
 	
 	public static void printCountFlowers(Bouquet... bouquet){
 		for (Bouquet b:bouquet){
-			System.out.println("Количество цветов в букете '"+b.getBouquetName()+"' = "+b.getFlower().size());
+			System.out.printf("Количество видов цветов в букете '%s' = %d\n",b.getBouquetName(),b.getFlower().size());
 		}
 	}
 	
